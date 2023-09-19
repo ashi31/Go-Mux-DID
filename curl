@@ -1,0 +1,29 @@
+curl -L -X POST ‘http://localhost:20000/api/createdid’ 
+-F ‘did_config=“
+{
+    \“type\“:0,
+    \“dir\“:\“\”,
+    \“config\“:\“\”,
+    \“master_did\“:\“\”,
+    \“secret\“:\“My DID Secret\“,
+    \“priv_pwd\“:\“mypassword\“,
+    \“quorum_pwd\“:\“mypassword\“,
+    \“img_file\“:\“image.png\“,
+    \“did_img_file\“:\“\”,
+    \“pub_img_file\“:\“\”,
+    \“priv_img_file\“:\“\”,
+    \“pub_key_file\“:\“\”,
+    \“priv_key_file\“:\“\”,
+    \“quorum_pub_key_file\“:\“\”,
+    \“quorum_priv_key_file\“:\“\”
+}“’
+
+The response should be as below
+{
+    “status”: true,
+    “message”: “DID created successfully”,
+    “result”: {
+        “did”: “<created did>“,
+        “peer_id”: “<current peerid>”
+    }
+}
